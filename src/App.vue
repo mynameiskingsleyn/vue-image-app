@@ -1,5 +1,9 @@
 <template lang="html">
-  <app-header> </app-header>
+  <div class="">
+    <app-header> </app-header>
+    <router-view></router-view>
+  </div>
+
 </template>
 
 <script>
