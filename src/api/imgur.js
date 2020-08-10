@@ -23,7 +23,7 @@ export default {
       });
   },
 
-  uploadImages(token,images){
+  uploadImages(images,token){
     const promises = Array.from(images).map(image=>{
       const formData = new FormData();
       formData.append('image',image);
@@ -33,7 +33,7 @@ export default {
         }
       });
     });
-    return Promise.all(promises)
+    return Promise.all(promises);
   }
 
 

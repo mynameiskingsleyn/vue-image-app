@@ -1,4 +1,5 @@
 import api from '../../api/imgur';
+import {router} from '../../main';
 //import images from './auth';
 
 const state ={
@@ -20,8 +21,11 @@ const actions ={
   async uploadImages({rootState},images){
     //items = images.target
     const {token} = rootState.auth; // get the token from auth module//
-    const response = await api.uploadImages(images,token);
-    console.log(images);
+    await api.uploadImages(images,token);
+    // redirect back to images
+    router.push('/');
+
+    //console.log(images);
   }
   /* eslint-enable */
 };
